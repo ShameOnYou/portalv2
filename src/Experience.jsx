@@ -3,6 +3,7 @@ import {
 	Float,
 	OrbitControls,
 	PerspectiveCamera,
+	Stars,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import { Suspense } from "react";
@@ -71,7 +72,15 @@ export default function Experience() {
 					<Grass />
 					<SceneParticles />
 				</Float>
-
+				<Stars
+					radius={100}
+					depth={100}
+					count={5000}
+					factor={1}
+					saturation={0}
+					fade
+					speed={1}
+				/>
 				<FloatingRocks />
 
 				<EffectComposer stencilBuffer={true}>
