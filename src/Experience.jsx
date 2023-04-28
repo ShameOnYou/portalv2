@@ -41,7 +41,7 @@ mesh.scale.set(1.5, 1, 1);
 export default function Experience() {
 	return (
 		<>
-			<Perf position="top-left" />
+			{/* <Perf position="top-left" /> */}
 			<Suspense fallback={null}>
 				<Environment background={"only"} files={"./bg.hdr"} />
 				<Environment background={false} files={"./envmap.hdr"} />
