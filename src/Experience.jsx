@@ -20,8 +20,9 @@ import {
 	GodRays,
 	HueSaturation,
 } from "@react-three/postprocessing";
-import { Color, CylinderGeometry, MeshBasicMaterial } from "three";
+import { Color, CylinderGeometry, MeshBasicMaterial, Mesh } from "three";
 import { BlendFunction, KernelSize, Resizer } from "postprocessing";
+import SceneParticles from "./SceneParticles";
 
 let mesh = new Mesh(
 	new CylinderGeometry(0.3, 0.3, 0.2, 20),
@@ -50,12 +51,7 @@ export default function Experience() {
 				/>
 				<OrbitControls target={[1, 5, 0]} maxPolarAngle={Math.PI * 0.5} />
 
-				<Float
-					speed={0.5}
-					rotationIntensity={0.2}
-					floatIntensity={0.6}
-					floatingRange={[1, 3]}
-				>
+				<Float speed={0.5} rotationIntensity={0.2} floatIntensity={0.6}>
 					<primitive object={mesh} />
 					<spotLight
 						penumbra={1}
@@ -73,6 +69,7 @@ export default function Experience() {
 					<Rocks />
 					<Trees />
 					<Grass />
+					<SceneParticles />
 				</Float>
 
 				<FloatingRocks />
